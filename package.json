@@ -1,0 +1,30 @@
+{
+  "name": "hostel",
+  "version": "1.0.0",
+  "description": "RGIPT HOSTEL REST API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Girish2819/Hostel.git"
+  },
+  "keywords": [],
+  "author": "Girish Ranjan",
+  "license": "RGIPT",
+  "bugs": {
+    "url": "https://github.com/Girish2819/Hostel/issues"
+  },
+  "homepage": "https://github.com/Girish2819/Hostel#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.10"
+  }
+}
