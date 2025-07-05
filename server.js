@@ -3,6 +3,7 @@ import colors from "colors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 connectDB(); // Connect to MongoDB
@@ -10,6 +11,9 @@ connectDB(); // Connect to MongoDB
 const app = express();
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(morgan('dev')); // Logging middleware
+
+
+app.use("/api/v1/auth", authRoutes); // Use auth routes
 
 app.get("/",(req,res)=>{
     res.send("<h1>Welcome to RGIPT Hostel<h1>");
