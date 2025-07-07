@@ -1,17 +1,24 @@
-import React from 'react'
-import Layout from '../components/layout/Layout'
-import { useAuth } from '../context/Auth' // Importing Auth context for authentication state
+import React from 'react';
+import '../styles/HomePage.css';
 
 const HomePage = () => {
-  const {auth} = useAuth(); // Accessing authentication state from context
-  return (
-    <Layout Title={"best offers"}>
-        <h1>HomePage</h1>
-        <pre>
-          {JSON.stringify(auth, null, 4)} {/* Displaying authentication state in a formatted way */}
-        </pre>
-        </Layout>
-  )
-}
+  const text = "Welcome to RGIPT Hostel";
 
-export default HomePage
+  return (
+    <div className="home-wrapper">
+      <h1 className="welcome-text">
+        {[...text].map((char, index) => (
+          <span
+            key={index}
+            className="letter"
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </span>
+        ))}
+      </h1>
+    </div>
+  );
+};
+
+export default HomePage;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { useAuth } from './context/auth';
 import toast from 'react-hot-toast';
+import { useAuth } from '../../context/Auth'; // Adjust the import path based on your folder structure
 // import logo from '../assets/logo.png'; // Update this path based on your folder structure
 
 const Header = () => {
