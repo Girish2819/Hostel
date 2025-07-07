@@ -4,11 +4,14 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
+import cors from "cors";
 
 dotenv.config();
 connectDB(); // Connect to MongoDB
 
 const app = express();
+
+app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use(morgan('dev')); // Logging middleware
 
