@@ -127,3 +127,7 @@ export const loginController = async (req, res) => {
         });
     }
 };
+
+export const testController = (req, res) => {
+    console.log("Protected Route");
+};

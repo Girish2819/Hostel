@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "students": "npm start --prefix students",
+    "dev": "concurrently \"npm run server\" \"npm run students\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "colors": "^1.4.0",
+    "concurrently": "^9.2.0",
     "dotenv": "^17.0.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
