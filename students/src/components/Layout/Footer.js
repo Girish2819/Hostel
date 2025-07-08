@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../../styles/Footer.css'; // ← correct relative path from Footer.js
+
 
 const Footer = () => {
   return (

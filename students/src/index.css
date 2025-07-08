@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+/* Layout styling */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex; /* This allows children like .home-wrapper to center vertically */
+  flex-direction: column;
+}
 
 
 
@@ -70,7 +82,6 @@
     display: flex;
     gap: 15px;
     align-items: center;
-    border-radius: 0.5rem;
 }
 
 .rgipt-header .nav-link {

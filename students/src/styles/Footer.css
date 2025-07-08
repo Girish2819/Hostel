@@ -1,0 +1,29 @@
+.footer {
+  background: linear-gradient(to top, #111, #333);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: auto;
+}
+
+.footer h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
