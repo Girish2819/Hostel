@@ -42,7 +42,7 @@ const Header = () => {
 
       {/* Right Side - Navigation Links */}
       <div className="nav-buttons">
-        <NavLink to="/" className="btn btn-light btn-sm me-2">
+        <NavLink to="/about" className="btn btn-light btn-sm me-2">
           About
         </NavLink>
         {!auth?.user ? (

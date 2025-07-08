@@ -1,0 +1,378 @@
+/* about.css - Council of Wardens Styling (Dark Violet-Blue Theme) */
+
+.council-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1b4b 0%, #1e3a8a 100%);
+  color: white;
+}
+
+.main-wrapper {
+  background: rgba(30, 27, 75, 0.85);
+  overflow: hidden;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #3b0764 0%, #1e3a8a 100%);
+  color: white;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.chairman-section {
+  padding: 20px 10px;
+  background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  color: white;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #f1f5f9;
+  margin-bottom: 60px;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border-radius: 2px;
+}
+
+.chairman-card {
+  background: rgba(30, 41, 59, 0.9);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.chairman-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.chairman-card:hover::before {
+  left: 100%;
+}
+
+.chairman-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.4);
+}
+
+.chairman-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 6px solid #3b82f6;
+  margin: 0 auto 30px;
+  object-fit: cover;
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.chairman-card:hover .chairman-photo {
+  transform: scale(1.05);
+}
+
+.chairman-name {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.chairman-title {
+  color: #60a5fa;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.chairman-contacts {
+  background: rgba(51, 65, 85, 0.5);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: left;
+  border: 1px solid #334155;
+}
+
+.wardens-section {
+  padding: 20px 10px;
+  background: #0f172a;
+  color: white;
+}
+
+.wardens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.warden-card {
+  background: rgba(30, 41, 59, 0.9);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.warden-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.warden-card:hover::before {
+  transform: scaleX(1);
+}
+
+.warden-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.warden-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.warden-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid #334155;
+  margin-right: 20px;
+  object-fit: cover;
+  transition: border-color 0.3s ease;
+}
+
+.warden-card:hover .warden-photo {
+  border-color: #3b82f6;
+}
+
+.warden-info {
+  flex: 1;
+}
+
+.warden-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.warden-block {
+  background: #1e293b;
+  color: #cbd5e1;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #334155;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-icon {
+  color: #3b82f6;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.contact-label {
+  font-weight: 500;
+  color: #cbd5e1;
+  margin-right: 8px;
+  min-width: 80px;
+}
+
+.contact-value {
+  color: #f1f5f9;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.contact-link {
+  color: #60a5fa;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+/* Utility classes */
+.inline {
+  display: inline;
+}
+
+.mr-3 {
+  margin-right: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .chairman-section,
+  .wardens-section {
+    padding: 40px 20px;
+  }
+
+  .wardens-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .warden-card {
+    padding: 20px;
+  }
+
+  .chairman-card {
+    padding: 30px;
+  }
+
+  .chairman-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .chairman-section,
+  .wardens-section {
+    padding: 30px 15px;
+  }
+
+  .wardens-grid {
+    gap: 20px;
+  }
+
+  .warden-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .warden-photo {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+
+.section-title.left-align {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 40px;
+  text-align: left;
+  padding-left: 0;
+  position: relative;
+}
+
+.section-title.left-align::after {
+  left: 0;
+  transform: none;
+}
