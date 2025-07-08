@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/Footer.css';
-// import logo from '../../assets/rgipt_logo.png'; // Adjust if needed
 
 const Footer = () => {
   return (
@@ -20,16 +19,11 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Center Logo */}
-      {/* <div className="footer-center">
-        <img src={logo} alt="RGIPT Logo" className="footer-logo" />
-        <p>© {new Date().getFullYear()} RGIPT Hostel</p>
-      </div> */}
-
       {/* Right Side */}
       <div className="footer-right">
-        <p className="developer-name">Designed & Developed by <p><span>Girish Ranjan</span>
-          </p></p>
+        <p className="developer-name">
+          Designed & Developed by <span>Girish Ranjan</span>
+        </p>
         <div className="social-icons">
           <a href="https://www.linkedin.com/in/girishranjan71" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>

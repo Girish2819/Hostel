@@ -3,7 +3,7 @@ import Layout from '../components/Layout/Layout';
 import { Mail, Phone, Smartphone, User, Users } from 'lucide-react';
 import '../styles/AboutPage.css'; // Assuming you have a CSS file for styling
 
-const CouncilAboutPage = () => {
+const AboutPage = () => {
   const chairman = {
     name: "Dr Koushik Guha Biswas",
     title: "Chairman, Council of Wardens",
@@ -155,4 +155,4 @@ const CouncilAboutPage = () => {
   );
 };
 
-export default CouncilAboutPage;
+export default AboutPage;

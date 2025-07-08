@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/LoginPage.css';
 import Layout from '../../components/Layout/Layout';
+import { Link } from 'react-router-dom'
 
 
 const Login = () => {
@@ -33,9 +34,9 @@ const Login = () => {
           <button type="submit" className="login-button">Login</button>
 
           {/* 👇 Register link */}
-          <div className="register-link">
-            Don't have an account? <a href="/register">Register</a>
-          </div>
+         <div className="register-link">
+            Don't have an account? <Link to="/register">Register</Link>
+            </div>
         </form>
       </div>
     </div>
