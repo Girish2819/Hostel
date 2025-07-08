@@ -15,14 +15,20 @@
 .welcome-text {
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 800;
-  color: #fff;
+  color: #0a0ab0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+   text-align: center;
+  text-shadow: none;
   z-index: 2;
+  position: absolute;
+  top: 20%; /* Push it slightly down from top */
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
+ 
 
 
 .rules-download-btn {
@@ -40,3 +46,26 @@
 .rules-download-btn:hover {
   background-color: #0056b3;
 }
+
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.5s forwards;
+  color: #f6f5f3; /* Blue for each letter */
+}
+
+
+/* New animation: smooth fade + slide */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
