@@ -13,6 +13,7 @@ const Register = () => {
     roomNumber: '',
     course: '',
     passingYear: '',
+    gender: '',
   });
 
   const handleChange = (e) => {
@@ -44,6 +45,33 @@ const Register = () => {
           <div className="form-group">
             <label>Password</label>
             <input type="password" name="password" required onChange={handleChange} />
+          </div>
+          <div className="form-group">
+      <div className="form-group">
+              <label>Gender</label>
+              <div className="gender-boxes">
+                <label className={`gender-box ${formData.gender === 'Male' ? 'selected' : ''}`}>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="Male"
+                    onChange={handleChange}
+                    hidden
+                  />
+                  Male
+                </label>
+                <label className={`gender-box ${formData.gender === 'Female' ? 'selected' : ''}`}>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="Female"
+                    onChange={handleChange}
+                    hidden
+                  />
+                  Female
+                </label>
+           </div>
+           </div>
           </div>
           <div className="form-group">
             <label>Phone</label>
