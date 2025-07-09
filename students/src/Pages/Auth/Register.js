@@ -1,30 +1,49 @@
 import React, { useState } from 'react';
 import '../../styles/RegisterPage.css';
 import { Link } from 'react-router-dom';
-import Layout from '../../components/Layout/Layout'; // Adjust the import path as needed
+import Layout from '../../components/Layout/Layout';
+import toast from 'react-hot-toast';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    phone: '',
-    hostelBlock: '',
-    roomNumber: '',
-    course: '',
-    passingYear: '',
-    gender: '',
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [gender, setGender] = useState('');
+  const [phone, setPhone] = useState('');
+  const [hostelBlock, setHostelBlock] = useState('');
+  const [roomNumber, setRoomNumber] = useState('');
+  const [course, setCourse] = useState('');
+  const [passingYear, setPassingYear] = useState('');
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value});
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
-    // Add axios or fetch call to send data to backend
+    try {
+      const res = await axios.post('/api/v1/auth/register', {
+        name,
+        email,  
+        password,
+        gender,
+        phone,
+        hostelBlock,
+        roomNumber,   
+        course,
+        passingYear,
+      });
+      if (res && res.data.success) {
+        toast.success(res.data.message);
+        navigate('/login');
+      } else {
+        toast.error(res.data.message);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error('Registration failed. Please try again.');
+    }
   };
+
 
   return (
     <Layout Title="Register">
