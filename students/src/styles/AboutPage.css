@@ -1,4 +1,3 @@
-/* about.css - Council of Wardens Styling (Dark Violet-Blue Theme) */
 
 .council-container {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -288,7 +287,7 @@
   text-decoration: underline;
 }
 
-/* Utility classes */
+
 .inline {
   display: inline;
 }
