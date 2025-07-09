@@ -42,6 +42,9 @@ const Header = () => {
 
       {/* Right Side - Navigation Links */}
       <div className="nav-buttons">
+        <NavLink to="/" className="btn btn-light btn-sm me-2">
+          Home
+        </NavLink>
         <NavLink to="/about" className="btn btn-light btn-sm me-2">
           About
         </NavLink>

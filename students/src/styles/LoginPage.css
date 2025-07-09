@@ -1,6 +1,7 @@
 .login-container {
   min-height: 100vh;
-  background-image: url('../assets/Hostel.png');
+   background: linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(30, 58, 138, 0.8) 100%),
+              url('../assets/Hostel.png') center/cover;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
