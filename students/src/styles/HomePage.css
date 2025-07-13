@@ -23,7 +23,7 @@
   text-shadow: none;
   z-index: 2;
   position: absolute;
-  top: 20%; /* Push it slightly down from top */
+  top: 20%; 
   left: 50%;
   transform: translate(-50%, -50%);
 

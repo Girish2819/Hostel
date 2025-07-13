@@ -4,6 +4,7 @@ import AboutPage from './Pages/AboutPage';
 import Login from './Pages/Auth/Login';
 import Register from './Pages/Auth/Register';
 import ForgotPassword from './Pages/Auth/ForgotPassword';
+import Profile from './components/user/Profile';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
      <Route path="/login" element={<Login/>} />
      <Route path="/register" element={<Register />} />
      <Route path="/forgot-Password" element={<ForgotPassword />} />
+     <Route path='/profile' element={<Profile />} />
     </Routes>
    
     </>

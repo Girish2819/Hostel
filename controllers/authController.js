@@ -2,74 +2,69 @@ import userModel from "../models/userModel.js";
 import { hashPassword } from "../helpers/authHelper.js";
 import  JWT from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import Profile from '../students/src/components/user/Profile';
 
 export const registerController = async (req, res) => {
-    try {
-        const { name, email, password, phone, hostelBlock, roomNumber, course, passingYear } = req.body;
+  try {
+    const { name, email, password, gender, phone, hostelBlock, roomNumber, course, passingYear } = req.body;
 
-        // Validate required fields
-        if (!name || !email || !password || !phone || !hostelBlock || !roomNumber || !course || !passingYear) {
-            return res.status(400).send({
-                success: false,
-                message: "All fields are required",
-            });
-        }
-
-         // Only allow @rgipt.ac.in emails
-         const collegeEmailRegex = /^[a-zA-Z0-9._%+-]+@rgipt\.ac\.in$/;
-         if (!collegeEmailRegex.test(email)) {
-          return res.status(400).send({
-         success: false,
-            message: "Only RGIPT college email are allowed",
+    if (!name || !email || !password || !gender || !phone || !hostelBlock || !roomNumber || !course || !passingYear) {
+      return res.status(400).send({
+        success: false,
+        message: "All fields are required",
       });
     }
 
-        // Validate email format
-        const existingUser = await User.findOne({ email });
-        if (existingUser) {
-            return res.status(409).send({
-                success: false,
-                message: "User already exists. Please login.",
-            });
-        }
-        
-
-        // Hash the password
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-
-        // Create new user
-        const user = new userModel({
-            name,
-            email,
-            password: hashedPassword,
-            phone,
-            hostelBlock,
-            roomNumber,
-            course,
-            passingYear,
-        });
-        await user.save();
-
-        res.status(201).send({
-            success: true,
-            message: "User registered successfully",
-            user: {
-                name: user.name,
-                email: user.email,
-                phone: user.phone,
-                role: user.role,
-            },
-        });
-
-    } catch (error) {
-        console.error("Registration Error:", error);
-        res.status(500).send({
-            success: false,
-            message: "Error in registration",
-            error: error.message,
-        });
+    const collegeEmailRegex = /^[a-zA-Z0-9._%+-]+@rgipt\.ac\.in$/;
+    if (!collegeEmailRegex.test(email)) {
+      return res.status(400).send({
+        success: false,
+        message: "Only RGIPT college email are allowed",
+      });
     }
+
+    const existingUser = await userModel.findOne({ email });
+    if (existingUser) {
+      return res.status(409).send({
+        success: false,
+        message: "User already exists. Please login.",
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const user = new userModel({
+      name,
+      email,
+      password: hashedPassword,
+      gender, 
+      phone,
+      hostelBlock,
+      roomNumber,
+      course,
+      passingYear,
+    });
+    await user.save();
+
+    res.status(201).send({
+      success: true,
+      message: "User registered successfully",
+      user: {
+        name: user.name,
+        email: user.email,
+        gender: user.gender,
+        phone: user.phone,
+        role: user.role,
+      },
+    });
+  } catch (error) {
+    console.error("Registration Error:", error);
+    res.status(500).send({
+      success: false,
+      message: "Error in registration",
+      error: error.message,
+    });
+  }
 };
 
 
@@ -131,3 +126,6 @@ export const loginController = async (req, res) => {
 export const testController = (req, res) => {
     console.log("Protected Route");
 };
+
+
+   

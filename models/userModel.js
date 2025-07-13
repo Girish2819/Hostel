@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
+    gender: {
+        type: String,
+        required: true,
+    },
     phone: {
         type: String,
         required: true,
@@ -45,11 +49,6 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-    Gender: {
-        type: String,
-        required: true,
-    },
-
     role: {
         type: Number,
         default:0,

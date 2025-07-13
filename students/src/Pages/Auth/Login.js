@@ -37,7 +37,7 @@ const Login = () => {
           navigate('/admin');
         }
         else {
-          navigate('/user');
+          navigate('/profile');
         }
       } 
     }
